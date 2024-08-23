@@ -1,0 +1,3 @@
+{
+b{md:cylinder 1 5; x:0}
+}setup();draw();

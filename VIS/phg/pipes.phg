@@ -1,0 +1,54 @@
+{
+#elements
+a{{md:cylinder 0.25 1;rz:90}x:-1;}
+a1{{md:cylinder 1 1;rz:90;rgb:0,40,0}x:-1;}
+a2{{md:cylinder 0.25 1;rz:90;rgb:70,60,50}x:-1;}
+b{{md:wantou 90 1 0.25;rgb:70,60,50} z:-1;ry:90;rgb:100,0,0}
+b2{{md:wantou 90 1 0.25;rgb:70,60,50}y:1;ry:90;rz:90;rgb:100,0,0}
+b3{{md:wantou 90 1 0.25;rgb:70,60,50} z:-1;ry:90}
+b4{{md:wantou 90 1 1;rgb:70,60,50} z:-1;ry:90;rgb:100,0,0}
+
+fa{md:cone 0.25 0.1 1;;rgb:200,180,0; {md:torus 0.5 0.05; y:1;rgb:200,0,0}}
+fa2{md:cone 0.25 0.1 1;rgb:200,180,0; {md:torus 0.5 0.1; y:1;rgb:35,30,40}}
+
+c{z:1;
+{md:cylinder 0.5 0.1;x:-0.5;rz:90}{md:cylinder 0.5 0.1;x:0.5;rz:90}fa}
+c2{z:1;
+{md:cylinder 0.5 0.1;x:-0.5;rz:90}{md:cylinder 0.5 0.1;x:0.5;rz:90}fa2}
+
+e{{md:wantou 90 1 0.25;}z:1;ry:180}
+e1{{md:wantou 90 1 1;}z:1;ry:180}
+f{x:1;ry:90};
+
+tong{<{{md:sphericalcrown 2 2 2;rgb:0,200,0;rz:180;y:1}rx:90;},{md:cylinder 2 3;y:1;rgb:0,200,0},{md:sphericalcrown 2 2 2;y:3;rgb:0,200,0;}>}
+tong2{<{{md:sphericalcrown 2 2 2;rgb:200,200,0;rz:180;y:1}rx:90;},{md:cylinder 2 15;y:1;rgb:200,200,0},{md:sphericalcrown 2 2 2;y:15;rgb:200,200,0;},{y:-1;s:2;rz:90;<a2,a2,b3>}>}
+
+
+#pipes
+A{ry:90; <a,a,a,a,b,c2,a,a,e,f,a,a,a,a,a,a,a,b,c,a,a,b,c2,a,a,a,a,a,a,a,{a,fa},b,c>}
+B{rx:90; <a,a,a,a,b,c,a,a,e,f,a,a,a,b,c,a,a,b,c,a,,a,a,a,a,a,a,a,a,a,a,a,a,b,c,a,a,a,a,b2,c2,a,a,a,a,a,b,c,a,a,a,b2,c,a,a,a,a>}
+C{rz:90; <a1,a1,a1,a1,b4,c2,a1,a1,e1,f,a1,a1,b4,c,a1,a1,b4,c,a1,{a1,fa},b4,c>}
+
+#parts
+ret1{{tong;x:5;},<A,A,A,B,A,A,tong,A,A,A,B,B,A,A,{tong2;x:5;y:5;},A,A,A,A,A,B,B,B>,{tong2;x:5;y:5;}}
+ret2{{tong;x:5;},<A,A,A,B,A,A,tong,A,B,A,A,{tong2;x:5;y:5;},A,A,A,C,A,B,B,B>,{tong2;x:5;y:5;}}
+ret3{{tong;x:5;},<A,A,C,B,A,A,tong,A,A,{tong2;x:5;y:5;},A,B,B,A,A,A,A,A,A,A,B,B,B>,{tong2;x:5;y:5;}}
+ret4{{tong;x:5;},<A,C,A,B,A,A,tong,A,A,A,B,B,A,A,{tong2;x:5;y:5;},A,A,,B,B>}
+ret5{{tong;x:5;},<A,C,A,B,A,C,C,B,tong,A,C,A,B,C,A,C,{tong2;x:5;y:5;},A,A,C,C,A,B,B>}
+
+#draw
+reta1{ x:-15;z:-5;y:5;
+    {s:0.25;z:5;x:5;{ret1,x:-28},{ret2,z:-18},{ret3,rz:90;x:18},{ret4,rz:90;x:-18},{ret5;y:-18}}
+    {s:0.25;z:-5;x:-5;{ret1,x:-38},{ret2,z:38},{ret5,rx:90;x:-18},{ret3,ry:90;z:-18},{ret4;y:18}}
+    {s:0.5;z:15;x:-15;{ret1,x:28},{ret2,z:-28},{ret3,rz:90;x:-18},{ret4,rz:90;x:-18},{ret5;y:18}}	
+   }
+reta2{ x:-5;z:-5;y:5;
+    {s:0.25;z:5;x:5;{ret1,x:18},{ret2,z:18},{ret3,rz:90;x:18},{ret4,rz:90;z:-18},{ret5;y:18}}
+    {s:0.25;z:-5;x:-5;{ret1,x:18},{ret2,z:18},{ret5,rx:90;x:18},{ret3,ry:90;z:18},{ret4;y:18}}
+    {s:0.5;z:15;x:-15;{ret1,x:-28},{ret2,z:18},{ret3,rz:-90;x:18},{ret4,rz:90;x:-18},{ret5;y:18}}	
+   }
+ret{
+{reta1}{reta2;x:10;z:15;ry:-90}{reta1;x:30;z:-35;}{reta2;x:-40;z:35;}
+}
+}
+setup();gen_feature(ret);draw(ret,1);
