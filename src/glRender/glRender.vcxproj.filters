@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="源文件\com">
+      <UniqueIdentifier>{d026e24a-2b29-47be-bea2-8e9ad5a870fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\com\.sys">
+      <UniqueIdentifier>{adafd423-69c8-42bd-95e1-7e2816d3d360}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\graphics">
+      <UniqueIdentifier>{acc06407-5ed4-4362-9127-22f639de7db8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\iostream">
+      <UniqueIdentifier>{50cb1a72-363e-461e-a48d-d3235368ed7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\com\.sys\imgui">
+      <UniqueIdentifier>{1613bf44-603b-4e04-90fe-8f8153f79187}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\views">
+      <UniqueIdentifier>{7d131b72-2cc7-4b2f-ae2a-704d09f17c65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\graphics\shader">
+      <UniqueIdentifier>{9fb83a31-0d75-44fa-af9a-1ca417634590}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ui">
+      <UniqueIdentifier>{7128e539-4c2c-4ea8-9e8d-f3efef78f638}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\imgui\imgui.cpp">
+      <Filter>源文件\com\.sys\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\imgui\imgui_draw.cpp">
+      <Filter>源文件\com\.sys\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\imgui\imgui_tables.cpp">
+      <Filter>源文件\com\.sys\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\imgui\imgui_widgets.cpp">
+      <Filter>源文件\com\.sys\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\imgui\imgui_impl_opengl3.cpp">
+      <Filter>源文件\com\.sys\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="GL\vtkglew\src\glew.c">
+      <Filter>源文件\com\.sys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\lua\lua53.c">
+      <Filter>源文件\com\.sys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EPM\.thirdpart\sqlite3\sqlite3.c">
+      <Filter>源文件\com\.sys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EPM\.thirdpart\pngDec.cc">
+      <Filter>源文件\com\.sys</Filter>
+    </ClCompile>
+    <ClCompile Include="server.cc">
+      <Filter>源文件\com\.sys</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="visGL.hpp">
+      <Filter>源文件\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EPM\PMCORE\thirdpart\httplib.hpp">
+      <Filter>源文件\com\.sys</Filter>
+    </ClInclude>
+    <ClInclude Include="shape2d.hpp">
+      <Filter>源文件\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="shape3d.hpp">
+      <Filter>源文件\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="strVStream2d.hpp">
+      <Filter>源文件\iostream</Filter>
+    </ClInclude>
+    <ClInclude Include="strVStream3d.hpp">
+      <Filter>源文件\iostream</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\lua\lua53.h">
+      <Filter>源文件\com\.sys</Filter>
+    </ClInclude>
+    <ClInclude Include="dllLib.hpp">
+      <Filter>源文件\com\.sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\imgui\lua_bindings\imgui_lua_bindings.hpp">
+      <Filter>源文件\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="http_server.hpp">
+      <Filter>源文件\com\.sys</Filter>
+    </ClInclude>
+    <ClInclude Include="cmd.hpp">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\sim\camera.hpp">
+      <Filter>源文件\com</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\sim\gl_mesh.hpp">
+      <Filter>源文件\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\sim\gl_sym.hpp">
+      <Filter>源文件\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="featrue_vis.hpp">
+      <Filter>源文件\views</Filter>
+    </ClInclude>
+    <ClInclude Include="topo_vis.hpp">
+      <Filter>源文件\views</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_vis.hpp">
+      <Filter>源文件\views</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.hpp">
+      <Filter>源文件\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="ui.hpp">
+      <Filter>源文件\ui</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\external\imgui\lua_bindings\imgui_iterator.inl">
+      <Filter>源文件\com\.sys\imgui</Filter>
+    </None>
+    <None Include="shader\vertex_shader.glsl">
+      <Filter>源文件\graphics</Filter>
+    </None>
+    <None Include="shader\fragment_shader.glsl">
+      <Filter>源文件\graphics\shader</Filter>
+    </None>
+  </ItemGroup>
+</Project>
